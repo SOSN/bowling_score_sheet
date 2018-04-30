@@ -5,14 +5,14 @@ class TestBase extends TestCase
 {
 
     /**
-     * アクセスしたいpublic,またはprivateプロパティのReflectionPropertyのインスタンスを返す。
-     * テスト対象となるクラスのpublic,またはprivateプロパティにアクセスしたい時に使う。
+     * アクセスしたいプロパティのReflectionPropertyのインスタンスを返す。
+     * 主にテスト対象となるクラスのprivateプロパティにアクセスしたい時に使う。
      *
-     * @param string $name_of_class - アクセスしたいpublic、またはprivateプロパティを持っているクラス
-     * @param string $property_name - アクセスしたいpublic、またはprivateプロパティ名
-     * @return object $property - アクセスしたいpublic、またはprivateプロパティのReflectionPropertyのインスタンス
+     * @param string $name_of_class - アクセスしたいプロパティを持っているクラス名
+     * @param string $property_name - アクセスしたいプロパティ名
+     * @return object $property - アクセスしたいプロパティのReflectionPropertyのインスタンス
      */
-    protected static function getInsOfProperty($name_of_class, $property_name)
+    protected static function getInsOfProperty(string $name_of_class,string $property_name)
     {
         $class = new \ReflectionClass($name_of_class);
         $property = $class->getProperty($property_name);
@@ -22,14 +22,28 @@ class TestBase extends TestCase
     }
 
     /**
-     * アクセスしたいpublic,またはprivateメソッドのReflectionMethodのインスタンスを返す。
-     * テスト対象となるクラスのpublic,またはprivateメソッドにアクセスしたい時に使う。
+     * 取得したいプロパティを返す。
+     * テスト対象となるクラスのprivateプロパティに取得したい時に使う。
      *
-     * @param string $name_of_class - アクセスしたいpublic、またはprivateメソッドを持っているクラス
-     * @param string $method_name - アクセスしたいpublic、またはprivateメソッド名
-     * @return object $property - アクセスしたいpublic、またはprivateメソッドのReflectionMethodのインスタンス
+     * @param string $name_of_class - 取得したいプロパティを持っているクラス名
+     * @param string $property_name - 取得したいプロパティ名
+     * @param object $ins - 取得したいプロパティを持っているクラスのインスタンス
+     * @return mixed - 指定したクラスのプロパティ
      */
-    protected static function getInsOfMethod($name_of_class, $method_name)
+    protected static function getProperty(string $name_of_class, string $property_name, $ins)
+    {
+        return self::getInsOfProperty($name_of_class, $property_name)->getValue($ins);
+    }
+
+    /**
+     * アクセスしたいメソッドのReflectionMethodのインスタンスを返す。
+     * テスト対象となるクラスのprivateメソッドにアクセスしたい時に使う。
+     *
+     * @param string $name_of_class - アクセスしたいメソッドを持っているクラス
+     * @param string $method_name - アクセスしたいメソッド名
+     * @return object $property - アクセスしたいメソッドのReflectionMethodのインスタンス
+     */
+    protected static function getInsOfMethod(string $name_of_class, string $method_name)
     {
 
         $class = new \ReflectionClass($name_of_class);
@@ -37,6 +51,21 @@ class TestBase extends TestCase
         $method->setAccessible(true);
 
         return $method;
+    }
+
+    /**
+     * ReflectionMethodを通してメソッドを実行する。
+     * 主にテスト対象となるprivateメソッドを実行したい時に使う。
+     *
+     * @param string $name_of_class - 実行したいメソッドを持っているクラス
+     * @param string $method_name -　実行したいメソッド名
+     * @param object $ins - 実行したいメソッドを持っているクラスのインスタンス
+     * @param array $args - 実行したいメソッドの引数
+     * @return mixed - 指定したメソッドの返り値
+     */
+    protected static function executeMethod(string $name_of_class, string $method_name, $ins, array $args = [])
+    {
+        return self::getInsOfMethod($name_of_class, $method_name)->invokeArgs($ins,$args);
     }
 
 

@@ -22,9 +22,9 @@ require('vendor/autoload.php');
 class BowlingScoreSheetTest extends TestBase
 {
     private $ins;
-    private $name_of_class = 'BowlingScoreSheet';
-    private $result_of_all_attempts_base=[//投球結果のデータのベースとなるもの
-        ['',''],['',''],['',''],['',''],['',''],['',''],['',''],['',''],['',''],['','','']
+    private $class_name = 'BowlingScoreSheet';
+    private $result_of_all_attempts_base = [//投球結果のデータのベースとなるもの
+        ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', ''], ['', '', '']
     ];
 
     /**
@@ -43,7 +43,7 @@ class BowlingScoreSheetTest extends TestBase
             ],
             //10フレーム分の配列がないなら、falseを返すこと。
             [
-                Arr::unsetElmsAndArrVals($this->result_of_all_attempts_base,0),
+                Arr::unsetElmsAndArrVals($this->result_of_all_attempts_base, 0),
                 false
             ],
 
@@ -69,13 +69,10 @@ class BowlingScoreSheetTest extends TestBase
     public function isValidNumOfFrames_ReturnsExpectedValue($result_of_all_attempts, $expected)
     {
         $this->ins = new BowlingScoreSheet($result_of_all_attempts);
-
-        $method = $this->getInsOfMethod($this->name_of_class,'isValidNumOfFrames');
-        $actual = $method->invoke($this->ins);
-        $this->assertEquals($expected,$actual);
+        $actual = $this->executeMethod($this->class_name, 'isValidNumOfFrames',$this->ins);
+        $this->assertEquals($expected, $actual);
 
     }
-
 
 
     /**
@@ -84,8 +81,8 @@ class BowlingScoreSheetTest extends TestBase
     public function getSumOfFrame_ReturnsExpectedValue_DataProvider()
     {
         $result_of_all_attempts = $this->result_of_all_attempts_base;
-        $result_of_all_attempts[0] = ['1','1'];
-        $result_of_all_attempts[1] = ['1',''];
+        $result_of_all_attempts[0] = ['1', '1'];
+        $result_of_all_attempts[1] = ['1', ''];
         return [
             //指定した配列の要素を足し、合計を返す事
             [
@@ -115,16 +112,13 @@ class BowlingScoreSheetTest extends TestBase
      * @param int $frame_num - フレーム内で倒されたピンの合計を取得するフレームの番号
      * @param $expected - 期待値
      */
-    public function getSumOfFrame_ReturnsExpectedValue($result_of_all_attempts,$frame_num,$expected)
+    public function getSumOfFrame_ReturnsExpectedValue($result_of_all_attempts, $frame_num, $expected)
     {
         $this->ins = new BowlingScoreSheet($result_of_all_attempts);
-
-        $method = $this->getInsOfMethod($this->name_of_class,'getSumOfFrame');
-        $actual = $method->invoke($this->ins,$frame_num);
-        $this->assertEquals($expected,$actual);
+        $actual = $this->executeMethod($this->class_name, 'getSumOfFrame',$this->ins, [$frame_num]);
+        $this->assertEquals($expected, $actual);
 
     }
-
 
 
     /**
@@ -132,17 +126,17 @@ class BowlingScoreSheetTest extends TestBase
      */
     public function validateFinalFrame_ReturnsExpectedValue_DataProvider()
     {
-        for ($i = 0; $i <= 4; ++$i){
+        for ($i = 0; $i <= 4; ++$i) {
             $result_of_all_attempts_for_tests[$i] = $this->result_of_all_attempts_base;
         }
-        $result_of_all_attempts_for_tests[0][9] = ['9','1',''];
-        $result_of_all_attempts_for_tests[1][9] = ['10','1',''];
+        $result_of_all_attempts_for_tests[0][9] = ['9', '1', ''];
+        $result_of_all_attempts_for_tests[1][9] = ['10', '1', ''];
 
-        $result_of_all_attempts_for_tests[2][9] = ['',''];
-        $result_of_all_attempts_for_tests[3][9] = ['11','',''];
-        $result_of_all_attempts_for_tests[4][9] = ['-1','',''];
-        $result_of_all_attempts_for_tests[5][9] = ['9','2',''];
-        $result_of_all_attempts_for_tests[6][9] = ['8','1','1'];
+        $result_of_all_attempts_for_tests[2][9] = ['', ''];
+        $result_of_all_attempts_for_tests[3][9] = ['11', '', ''];
+        $result_of_all_attempts_for_tests[4][9] = ['-1', '', ''];
+        $result_of_all_attempts_for_tests[5][9] = ['9', '2', ''];
+        $result_of_all_attempts_for_tests[6][9] = ['8', '1', '1'];
 
         return [
             [//最終フレームの投球結果が正常な形式であるのならば、nullを返すこと。
@@ -212,15 +206,12 @@ class BowlingScoreSheetTest extends TestBase
      * @param int $frame_num - ヴァリデーションをかけるフレームのフレーム番号
      * @param $expected - 期待値
      */
-    public function validateFinalFrame_ReturnsExpectedValue($result_of_all_attempts,$frame_num,$expected)
+    public function validateFinalFrame_ReturnsExpectedValue($result_of_all_attempts, $frame_num, $expected)
     {
 
         $this->ins = new BowlingScoreSheet($result_of_all_attempts);
-        $method = $this->getInsOfMethod($this->name_of_class,'validateFinalFrame');
-        $actual = $method->invoke($this->ins,$frame_num);
-        $this->assertEquals($expected,$actual);
-
-
+        $actual = $this->executeMethod($this->class_name, 'validateFinalFrame',$this->ins, [$frame_num]);
+        $this->assertEquals($expected, $actual);
     }
 
 
@@ -229,18 +220,18 @@ class BowlingScoreSheetTest extends TestBase
      */
     public function validateAttempt_ReturnsExpectedValue_DataProvider()
     {
-        for ($i = 0; $i <= 3; ++$i){
+        for ($i = 0; $i <= 3; ++$i) {
             $result_of_all_attempts_for_tests[$i] = $this->result_of_all_attempts_base;
         }
 
-        $result_of_all_attempts_for_tests[0][0] = ['9','0'];
-        $result_of_all_attempts_for_tests[1][0] = ['0','0'];
-        $result_of_all_attempts_for_tests[2][0] = ['11','0'];
-        $result_of_all_attempts_for_tests[3][0] = ['-1','0'];
+        $result_of_all_attempts_for_tests[0][0] = ['9', '0'];
+        $result_of_all_attempts_for_tests[1][0] = ['0', '0'];
+        $result_of_all_attempts_for_tests[2][0] = ['11', '0'];
+        $result_of_all_attempts_for_tests[3][0] = ['-1', '0'];
 
         return [
             //最終フレームの投球結果が正常な形式であるのならば、nullを返すこと。
-            [   $result_of_all_attempts_for_tests[0],
+            [$result_of_all_attempts_for_tests[0],
                 null
             ],
 
@@ -278,13 +269,12 @@ class BowlingScoreSheetTest extends TestBase
      * @param array $result_of_all_attempts - 全ての投球結果
      * @param $expected - 期待値
      */
-    public function validateAttempt_ReturnsExpectedValue($result_of_all_attempts,$expected)
+    public function validateAttempt_ReturnsExpectedValue($result_of_all_attempts, $expected)
     {
 
         $this->ins = new BowlingScoreSheet($result_of_all_attempts);
-        $method = $this->getInsOfMethod($this->name_of_class,'validateAttempt');
-        $actual = $method->invoke($this->ins,$result_of_all_attempts[0][0]);
-        $this->assertEquals($expected,$actual);
+        $actual = $this->executeMethod($this->class_name, 'validateAttempt',$this->ins, [$result_of_all_attempts[0][0]]);
+        $this->assertEquals($expected, $actual);
     }
 
 
@@ -293,22 +283,22 @@ class BowlingScoreSheetTest extends TestBase
      */
     public function validateAttempts_ReturnsExpectedValue_DataProvider()
     {
-        for ($i = 0; $i <= 6; ++$i){
+        for ($i = 0; $i <= 6; ++$i) {
             $result_of_all_attempts_for_tests[$i] = $this->result_of_all_attempts_base;
         }
 
         //nullを返す事
-        $result_of_all_attempts_for_tests[0][0] = ['9','2'];
+        $result_of_all_attempts_for_tests[0][0] = ['9', '2'];
 
         //1004を返す事
-        $result_of_all_attempts_for_tests[1][0] = ['11','0'];
-        $result_of_all_attempts_for_tests[2][0] = ['0','11'];
-        $result_of_all_attempts_for_tests[3][0] = ['11','-1'];
+        $result_of_all_attempts_for_tests[1][0] = ['11', '0'];
+        $result_of_all_attempts_for_tests[2][0] = ['0', '11'];
+        $result_of_all_attempts_for_tests[3][0] = ['11', '-1'];
 
         //1005を返す事
-        $result_of_all_attempts_for_tests[4][0] = ['-1','0'];
-        $result_of_all_attempts_for_tests[5][0] = ['0','-1'];
-        $result_of_all_attempts_for_tests[6][0] = ['-1','10'];
+        $result_of_all_attempts_for_tests[4][0] = ['-1', '0'];
+        $result_of_all_attempts_for_tests[5][0] = ['0', '-1'];
+        $result_of_all_attempts_for_tests[6][0] = ['-1', '10'];
 
         return [
             [
@@ -353,8 +343,6 @@ class BowlingScoreSheetTest extends TestBase
             ],
 
 
-
-
         ];
     }
 
@@ -371,14 +359,12 @@ class BowlingScoreSheetTest extends TestBase
      * @param int $frame_num - ヴァリデーションをかけたい投球を含んだフレームの番号
      * @param $expected - 期待値
      */
-    public function validateAttempts_ReturnsExpectedValue($result_of_all_attempts,$frame_num,$expected)
+    public function validateAttempts_ReturnsExpectedValue($result_of_all_attempts, $frame_num, $expected)
     {
         $this->ins = new BowlingScoreSheet($result_of_all_attempts);
-        $method = $this->getInsOfMethod($this->name_of_class,'validateAttempts');
-        $actual = $method->invoke($this->ins,$frame_num);
-        $this->assertEquals($expected,$actual);
+        $actual = $this->executeMethod($this->class_name, 'validateAttempts',$this->ins, [$frame_num]);
+        $this->assertEquals($expected, $actual);
     }
-
 
 
     /**
@@ -386,26 +372,26 @@ class BowlingScoreSheetTest extends TestBase
      */
     public function validateFrame_ReturnsExpectedValue_DataProvider()
     {
-        for ($i = 0; $i <= 6; ++$i){
+        for ($i = 0; $i <= 6; ++$i) {
             $result_of_all_attempts_for_tests[$i] = $this->result_of_all_attempts_base;
         }
 
         //nullを返す事
-        $result_of_all_attempts_for_tests[0][0] = ['9','1'];
-        $result_of_all_attempts_for_tests[1][0] = ['0','0'];
+        $result_of_all_attempts_for_tests[0][0] = ['9', '1'];
+        $result_of_all_attempts_for_tests[1][0] = ['0', '0'];
 
         //1004を返す事
-        $result_of_all_attempts_for_tests[2][0] = ['11','0'];
-        $result_of_all_attempts_for_tests[3][0] = ['0','11'];
-        $result_of_all_attempts_for_tests[4][0] = ['11','-1'];
+        $result_of_all_attempts_for_tests[2][0] = ['11', '0'];
+        $result_of_all_attempts_for_tests[3][0] = ['0', '11'];
+        $result_of_all_attempts_for_tests[4][0] = ['11', '-1'];
 
         //1005を返す事
-        $result_of_all_attempts_for_tests[5][0] = ['-1','0'];
-        $result_of_all_attempts_for_tests[6][0] = ['0','-1'];
-        $result_of_all_attempts_for_tests[7][0] = ['-1','10'];
+        $result_of_all_attempts_for_tests[5][0] = ['-1', '0'];
+        $result_of_all_attempts_for_tests[6][0] = ['0', '-1'];
+        $result_of_all_attempts_for_tests[7][0] = ['-1', '10'];
 
         //1002を返す事
-        $result_of_all_attempts_for_tests[8][0] = ['9','2'];
+        $result_of_all_attempts_for_tests[8][0] = ['9', '2'];
         return [
             [
                 $result_of_all_attempts_for_tests[0],
@@ -459,8 +445,6 @@ class BowlingScoreSheetTest extends TestBase
             ],
 
 
-
-
         ];
     }
 
@@ -477,71 +461,64 @@ class BowlingScoreSheetTest extends TestBase
      * @param int $frame_num - ヴァリデーションをかけるフレームの番号
      * @param $expected - 期待値
      */
-    public function validateFrame_ReturnsExpectedValue($result_of_all_attempts,$frame_num,$expected)
+    public function validateFrame_ReturnsExpectedValue($result_of_all_attempts, $frame_num, $expected)
     {
-
         $this->ins = new BowlingScoreSheet($result_of_all_attempts);
-        $method = $this->getInsOfMethod($this->name_of_class,'validateFrame');
-        $actual = $method->invoke($this->ins,$frame_num);
-        $this->assertEquals($expected,$actual);
+        $actual = $this->executeMethod($this->class_name, 'validateFrame',$this->ins, [$frame_num]);
+        $this->assertEquals($expected, $actual);
     }
 
 
+    /**
+     * @dataProvider generateErrorMsg_ReturnsExpectedValue
+     */
+    public function generateErrorMsg_ReturnsExpectedValue_DataProvider(){
+        $this->ins = new BowlingScoreSheet($this->result_of_all_attempts_base);//適当な投球結果を挿入しておく。
+        $err_msg_lang = $this->getProperty($this->class_name,'err_msg_lang',$this->ins);
+        $errors = $this->getProperty($this->class_name,'errors', $this->ins);
+        $err_msgs[0] = $errors['1001']['msgs'][$err_msg_lang['validation']];
 
-//    /**
-//     * @dataProvider getSumOfFrame_ThrowsTypeErrorAndShowExpectedMsg_IfArg1IsNotInt
-//     */
-//    public function getSumOfFrame_ThrowsTypeErrorAndShowExpectedMsg_IfArg1IsNotInt_DataProvider()
-//    {
-//
-//        return [
-//            [
-//                [//指定した配列の要素を足し、合計を返す
-//                    [1,1],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]
-//                ],
-//                '1',
-//                'integer',
-//                0
-//            ]
-//        ];
-//    }
+        return [
+            [
+                $this->result_of_all_attempts_base,//適当な投球結果を挿入しておく。
+                '1001',
+                0,
+                $err_msgs[0]
+            ]
+        ];
+    }
 
 
+    /**
+     *
+     * php tests/phpunit.phar --group BowlingScoreSheetTest-generateErrorMsg_ReturnsExpectedValue tests/BowlingScoreSheetTest.php
+     * @test
+     * @group BowlingScoreSheetTest-generateErrorMsg_ReturnsExpectedValue
+     * @dataProvider generateErrorMsg_ReturnsExpectedValue_DataProvider
+     *
+     * generateErrorMsgメソッドが期待値を返すかのテスト。
+     * @param array $result_of_all_attempts - 全ての投球結果
+     * @param string $err_code -  エラーコード
+     * @param int $frame_num -  エラーのあったフレーム番号
+     * @param $expected - 期待値
+     */
+    public function generateErrorMsg_ReturnsExpectedValue($result_of_all_attempts, $err_code, $frame_num, $expected)
+    {
+//        echo('<pre>');
+//        var_dump($this->ins);
+//        echo('</pre>');
+//        exit;
+        $this->ins = new BowlingScoreSheet($result_of_all_attempts);
+        $actual = $this->executeMethod($this->class_name, 'generateErrorMsg',$this->ins, [$err_code,$frame_num]);
 
-//    /**
-//     * php declare(strict_type=1); tests/phpunit.phar --group BowlingScoreSheetTest-getSumOfFrame_ThrowsTypeErrorAndShowExpectedMsg_IfArg1IsNotInt tests/BowlingScoreSheetTest.php
-//     * @test
-//     * @group BowlingScoreSheetTest-getSumOfFrame_ThrowsTypeErrorAndShowExpectedMsg_IfArg1IsNotInt
-//     * @dataProvider getSumOfFrame_ThrowsTypeErrorAndShowExpectedMsg_IfArg1IsNotInt_DataProvider
-//     *
-//     * getSumOfFrameメソッドの引数が整数型でない場合に、例外処理が発生し、期待したメッセージが表示されるかのテスト。
-//     * @param array $result_of_all_attempts : 全ての投球結果
-//     * @param $frame_num : 整数型ではない型のデータ
-//     *
-//     * @param $expected_type : 引数$frame_numに期待される値
-//     * @paran int $error_arg_key - エラーがあると想定される引数のキー。例えば一番目の引数ならば0となる。
-//     */
-//    public function getSumOfFrame_ThrowsTypeErrorAndShowExpectedMsg_IfArg1IsNotInt($result_of_all_attempts,$frame_num,$expected_type,$error_arg_key)
-//    {
-////        $this->expectException();
-//        $this->ins = new BowlingScoreSheet($result_of_all_attempts);
-//        try {
-//            $method = $this->getInsOfMethod($this->name_of_class,'getSumOfFrame');
-//            $actual = $method->invoke($this->ins,$frame_num);
-////            echo('<pre>');
-////            var_dump($actual);
-////            echo('</pre>');
-////            exit;
-//            $this->fail('例外発生なし');
-//        } catch (TypeError $e) {
-////            $this->expectException(InvalidArgumentException::class);
-//
-//            $method_name = BowlingScoreSheet::class.'::getSumOfFrame';
-//            $this->assertValidTypeErrorMsg($e,$frame_num,$error_arg_key,$method_name,$expected_type);
-//
-//        }
-//
-//    }
-
+//        $method = $this->getInsOfMethod($this->class_name, 'generateErrorMsg');
+//        $actual = $method->invoke($this->ins, $frame_num);
+        echo('<pre>');
+        var_dump($actual);
+        var_dump($expected);
+        echo('</pre>');
+        exit;
+        $this->assertEquals($expected, $actual);
+    }
 
 }

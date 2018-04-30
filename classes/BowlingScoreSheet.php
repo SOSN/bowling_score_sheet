@@ -59,6 +59,12 @@ declare(strict_types=1);
                     'en' => 'To throw third attempt in Frame 10, the player need to strike in first attempt or spare in 2nd attempt',
                     'jp' => '第10フレームの3投目を投げるには、1投目でストライクを出すか、2投目でスペアを出す必要性があります。',
                 ]
+            ],
+            '2001'=>[
+                'title'=>'Cannot generate an error message',
+                'msgs' => [
+                    'en' => 'Cannot generate an error message',
+                ]
             ]
         ];
 
@@ -220,39 +226,48 @@ declare(strict_types=1);
 
 
         /**
-         * キーにエラーのあったフレームの番号、要素にエラーコードが入った配列から、
-         * エラーメッセージ群を抽出し、それを配列で返す。
-         * @param $err_codes -  キーにエラーのあったフレームの番号、要素にエラーコードが入った配列
-         * @return
+//         * キーにエラーのあったフレームの番号、要素にエラーコードが入った配列から、
+//         * エラーメッセージ群を抽出し、それを配列で返す。
+//         * @param $err_codes -  キーにエラーのあったフレームの番号、要素にエラーコードが入った配列
+//         * @return
+//         */
+//        public function generateErrorMsgs($err_codes):array{
+//
+//            $err_msgs = [];
+//            if(!empty($err_codes)) {
+//                if(is_string($err_codes)){
+//                    $err_msgs = $this->generateErrorMsg($err_codes);
+//                }elseif(is_array($err_codes)) {
+//                    foreach ($err_codes as $frame_num => $err_code) {
+//                        $err_msgs[] = $this->generateErrorMsg($err_code,$frame_num);
+//                    }
+//                }else{
+//                    throw Exception('$err_codes is not valid type. Must be string or array.');
+//                }
+//            }else{
+//                throw Exception('$err_codes is empty. Please specify valid error codes');
+//            }
+//            return $err_msgs;
+//        }
+
+        /**
+         *
+         *
+         * @param string $err_code -  エラーコード
+         * @param int $frame_num -  エラーのあったフレーム番号
+         * @return string $err_msg - エラーメッセージ
+         * @throws  - Exception エラーメッセージを作り出す事が出来なかった場合。
+         *
          */
-        public function generateErrorMsgs($err_codes):array{
-
-            $err_msgs = [];
-            if(!empty($err_codes)) {
-                if(is_string($err_codes)){
-                    $err_msgs = $this->generateErrorMsg($err_codes);
-                }elseif(is_array($err_codes)) {
-                    foreach ($err_codes as $frame_num => $err_code) {
-                        $err_msgs[] = $this->generateErrorMsg($err_code,$frame_num);
-                    }
-                }else{
-                    throw Exception('$err_codes is not valid type. Must be string or array.');
-                }
-            }else{
-                throw Exception('$err_codes is empty. Please specify valid error codes');
-            }
-            return $err_msgs;
-        }
-
-
         public function generateErrorMsg(string $err_code,int $frame_num = null):string{
 
-            $err_msg =  $this->errors[$err_code]['msgs'][$this->err_msg_lang];
+            $err_msg =  $this->errors[$err_code]['msgs'][$this->err_msg_lang['validation']];
             if(!empty($err_msg)){
                 if($frame_num !== null && strpos($err_msg,'%d')){
                     $err_msg = sprintf($err_msg, $frame_num);
                 }
             }else{
+                $this->errors['2001']['msgs'][$this->err_msg_lang['exception']];
                 throw Exception('Cannot generate error msgs');
             }
             return $err_msg;
