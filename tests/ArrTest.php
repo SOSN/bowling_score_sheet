@@ -6,7 +6,10 @@ require_once('./vendor/autoload.php');
  * @group Tests
  * @group Tests-ArrTest
  *
- * php tests/phpunit.phar --group Tests tests/ArrTest.php
+ * php tests/phpunit.phar  --group=Tests --coverage-html=tests/coverage/ tests/
+ * php tests/phpunit.phar  --group=Tests-ArrTest --coverage-html=tests/coverage/ tests/ArrTest.php
+ *
+ * php tests/phpunit.phar --group Tests tests/
  * php tests/phpunit.phar --group Tests-ArrTest tests/ArrTest.php
  *
  */

@@ -8,13 +8,13 @@ class TestBase extends TestCase
      * アクセスしたいプロパティのReflectionPropertyのインスタンスを返す。
      * 主にテスト対象となるクラスのprivateプロパティにアクセスしたい時に使う。
      *
-     * @param string $name_of_class - アクセスしたいプロパティを持っているクラス名
+     * @param string $class_name - アクセスしたいプロパティを持っているクラス名
      * @param string $property_name - アクセスしたいプロパティ名
      * @return object $property - アクセスしたいプロパティのReflectionPropertyのインスタンス
      */
-    protected static function getInsOfProperty(string $name_of_class,string $property_name)
+    protected static function getInsOfProperty(string $class_name,string $property_name)
     {
-        $class = new \ReflectionClass($name_of_class);
+        $class = new \ReflectionClass($class_name);
         $property = $class->getProperty($property_name);
         $property->setAccessible(true);
 
@@ -25,28 +25,47 @@ class TestBase extends TestCase
      * 取得したいプロパティを返す。
      * テスト対象となるクラスのprivateプロパティに取得したい時に使う。
      *
-     * @param string $name_of_class - 取得したいプロパティを持っているクラス名
+     * @param string $class_name - 取得したいプロパティを持っているクラス名
      * @param string $property_name - 取得したいプロパティ名
      * @param object $ins - 取得したいプロパティを持っているクラスのインスタンス
      * @return mixed - 指定したクラスのプロパティ
      */
-    protected static function getProperty(string $name_of_class, string $property_name, $ins)
+    protected static function getProperty(string $class_name, string $property_name, $ins)
     {
-        return self::getInsOfProperty($name_of_class, $property_name)->getValue($ins);
+        return self::getInsOfProperty($class_name, $property_name)->getValue($ins);
+    }
+
+
+    /**
+     * 複数の取得したいプロパティを返す
+     * @param string $class_name - 取得したいプロパティを持っているクラス名
+     * @param array $property_names - 取得したいプロパティ名の配列
+     * @param array $constructor_args  - クラスのコンストラクタの引数
+     * @return array $properties - 指定したクラスのプロパティ
+     *
+     */
+    public function getProperties(string $class_name, array $property_names ,array $constructor_args = null):array{
+
+        $ins = new $class_name(...$constructor_args);
+        $properties = [];
+        foreach ($property_names as $property_name) {
+            $properties[$property_name] = $this->getProperty($class_name,$property_name,$ins);
+        }
+        return $properties;
     }
 
     /**
      * アクセスしたいメソッドのReflectionMethodのインスタンスを返す。
      * テスト対象となるクラスのprivateメソッドにアクセスしたい時に使う。
      *
-     * @param string $name_of_class - アクセスしたいメソッドを持っているクラス
+     * @param string $class_name - アクセスしたいメソッドを持っているクラス
      * @param string $method_name - アクセスしたいメソッド名
      * @return object $property - アクセスしたいメソッドのReflectionMethodのインスタンス
      */
-    protected static function getInsOfMethod(string $name_of_class, string $method_name)
+    protected static function getInsOfMethod(string $class_name, string $method_name)
     {
 
-        $class = new \ReflectionClass($name_of_class);
+        $class = new \ReflectionClass($class_name);
         $method = $class->getMethod($method_name);
         $method->setAccessible(true);
 
@@ -57,15 +76,16 @@ class TestBase extends TestCase
      * ReflectionMethodを通してメソッドを実行する。
      * 主にテスト対象となるprivateメソッドを実行したい時に使う。
      *
-     * @param string $name_of_class - 実行したいメソッドを持っているクラス
+     * @param string $class_name - 実行したいメソッドを持っているクラス
      * @param string $method_name -　実行したいメソッド名
      * @param object $ins - 実行したいメソッドを持っているクラスのインスタンス
      * @param array $args - 実行したいメソッドの引数
      * @return mixed - 指定したメソッドの返り値
      */
-    protected static function executeMethod(string $name_of_class, string $method_name, $ins, array $args = [])
+    protected static function executeMethod(string $class_name, string $method_name, $ins, array $args = [])
     {
-        return self::getInsOfMethod($name_of_class, $method_name)->invokeArgs($ins,$args);
+
+        return self::getInsOfMethod($class_name, $method_name)->invokeArgs($ins,$args);
     }
 
 

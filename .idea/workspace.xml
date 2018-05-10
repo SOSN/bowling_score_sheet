@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b937f778-f54f-4628-99b1-b930376be860" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/phpunit.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/Arr.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Arr.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/BowlingScoreSheet.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/BowlingScoreSheet.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ArrTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ArrTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/BowlingScoreSheetTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BowlingScoreSheetTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/TestBase.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestBase.php" afterDir="false" />
     </list>
@@ -25,8 +29,8 @@
             <file leaf-file-name="BowlingScoreSheetTest.php" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/tests/BowlingScoreSheetTest.php">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="475">
-                    <caret line="499" column="45" lean-forward="true" selection-start-line="499" selection-start-column="45" selection-end-line="499" selection-end-column="45" />
+                  <state relative-caret-position="1792">
+                    <caret line="1946" column="42" selection-start-line="1946" selection-start-column="42" selection-end-line="1946" selection-end-column="42" />
                   </state>
                 </provider>
               </entry>
@@ -38,20 +42,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TestBase.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/TestBase.php">
+      <file leaf-file-name="BowlingScoreSheet.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/classes/BowlingScoreSheet.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="53" column="5" lean-forward="true" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+            <state relative-caret-position="415">
+              <caret line="103" column="21" lean-forward="true" selection-start-line="103" selection-start-column="21" selection-end-line="103" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BowlingScoreSheet.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/classes/BowlingScoreSheet.php">
+      <file leaf-file-name="ArrTest.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/ArrTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="255" column="11" lean-forward="true" selection-start-line="255" selection-start-column="11" selection-end-line="256" selection-end-column="49" />
+            <state relative-caret-position="2448">
+              <caret line="144" column="30" selection-start-line="144" selection-start-column="30" selection-end-line="144" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Core_d.php" pinned="false" current-in-tab="false">
+        <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/Core/Core_d.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5083">
+              <caret line="299" column="9" selection-start-line="299" selection-start-column="9" selection-end-line="299" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="phpunit.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/phpunit.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
             </state>
           </provider>
         </entry>
@@ -59,8 +81,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="31" />
+            <state relative-caret-position="1190">
+              <caret line="70" column="33" selection-start-line="70" selection-start-column="33" selection-end-line="70" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -68,8 +90,8 @@
       <file leaf-file-name="Arr.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classes/Arr.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+            <state relative-caret-position="85">
+              <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -94,52 +116,38 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>colspan='2'</find>
-      <find>$result_of_all_attempts_2</find>
-      <find>get_sum_of_each_frame</find>
-      <find>is_valid_number_of_frames</find>
-      <find>is_valid_frame_result</find>
-      <find>is_strike</find>
-      <find>get_strikes_in_final_frame</find>
-      <find>$frame</find>
-      <find>$attempt_num_to_check_in_final_frame</find>
-      <find>メソッド</find>
-      <find>$propertyName</find>
-      <find>isValidNumOfFrames</find>
-      <find>getSumOfEachFrame</find>
-      <find>error_names</find>
-      <find>$class_nameOferrIns</find>
-      <find>get</find>
-      <find>$error_arg_num</find>
-      <find>strict_types=1</find>
-      <find>0</find>
-      <find>isValidFinalFrameResult</find>
-      <find>phpunit.phar</find>
-      <find>BowlingScoreSheetTest.ph</find>
-      <find>unsetElms</find>
-      <find>isValidAttempt</find>
-      <find>validateFinalFrame</find>
-      <find>name_of_class</find>
-      <find>1001</find>
-      <find>invoke</find>
-      <find>アクセス</find>
+      <find>alculateScores_ExecutesExpectedMethods</find>
+      <find>for</find>
+      <find>validateFrame</find>
       <find>generate</find>
+      <find>10Frames</find>
+      <find>$attempt</find>
+      <find>attempt</find>
+      <find>validate_results</find>
+      <find>executed_validate_final_frame</find>
+      <find>executed_validate_attempts</find>
+      <find>executed_validate_frames</find>
+      <find>executed_validate_frame_key</find>
+      <find>validate_frame_key</find>
+      <find>executed</find>
+      <find>calcu</find>
+      <find>calculate</find>
+      <find>validateFinal</find>
+      <find>isStrike</find>
+      <find>validateFinalFrame</find>
+      <find>validateAtt</find>
+      <find>is_valid_data</find>
+      <find>validateResults</find>
+      <find>validateAttempt</find>
+      <find>validateAttempts</find>
+      <find>validateFrameKey</find>
+      <find>validate</find>
+      <find>times_validate_frames_executed</find>
+      <find>validateFrames</find>
+      <find>calculateScore</find>
+      <find>validateResult</find>
     </findStrings>
     <replaceStrings>
-      <replace>throw</replace>
-      <replace>$result_of_all_attempts</replace>
-      <replace>$result_of_attempts_in_each_frame</replace>
-      <replace>getSumOfEachFrame</replace>
-      <replace>isValidNumOfFrames</replace>
-      <replace>isValidFrameResult</replace>
-      <replace>isValidFinalFrameResult</replace>
-      <replace>isStrike</replace>
-      <replace>getStrikesInFinalFrame</replace>
-      <replace>$frame_num</replace>
-      <replace>$attempt_to_check_in_final_frame</replace>
-      <replace>$name_of_class</replace>
-      <replace>$property_name</replace>
-      <replace>getSumOfFrame</replace>
       <replace>期待値を返す事</replace>
       <replace>ReturnsExpectedValue</replace>
       <replace>$error_keys</replace>
@@ -154,8 +162,22 @@
       <replace>validateAttempt</replace>
       <replace>$final_frame_attempts</replace>
       <replace>validateFrame</replace>
-      <replace>class_name</replace>
       <replace>取得</replace>
+      <replace>assertSame</replace>
+      <replace>ThrowsExpectedException_WhenCannotGenerateErrorMsg</replace>
+      <replace>class_name</replace>
+      <replace>ExecuteValidateFinalFrame_WhenFrameNumIs10</replace>
+      <replace>OnlyWhenFrameNumIs10</replace>
+      <replace>Tests-BowlingScoreSheetTest</replace>
+      <replace>validateFrameKey</replace>
+      <replace>ThrowsExpectedException_WhenFrameNumIsInvalid</replace>
+      <replace>calculateScores_ExcutesExpectedMethods_WhenValidDataGiven</replace>
+      <replace>Executes</replace>
+      <replace>getSumOfPinsInFrame</replace>
+      <replace>TenFrames</replace>
+      <replace>is_valid_result</replace>
+      <replace>validateResult</replace>
+      <replace>calculateScores</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -172,7 +194,6 @@
         <option value="$PROJECT_DIR$/Tests/BowlingScoreSheetTest.php" />
         <option value="$PROJECT_DIR$/SplClassLoader.php" />
         <option value="$PROJECT_DIR$/test.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/TestBase.php" />
         <option value="$PROJECT_DIR$/BowlingScoreSheet.php" />
         <option value="$PROJECT_DIR$/BowlingScoreSheetTest.php" />
@@ -182,10 +203,12 @@
         <option value="$PROJECT_DIR$/Arr.php" />
         <option value="$PROJECT_DIR$/Tests/ArrTest.php" />
         <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/tests/TestBase.php" />
+        <option value="$PROJECT_DIR$/phpunit.xml" />
         <option value="$PROJECT_DIR$/classes/Arr.php" />
         <option value="$PROJECT_DIR$/tests/ArrTest.php" />
-        <option value="$PROJECT_DIR$/tests/TestBase.php" />
         <option value="$PROJECT_DIR$/classes/BowlingScoreSheet.php" />
+        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/tests/BowlingScoreSheetTest.php" />
       </list>
     </option>
@@ -233,8 +256,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="157" />
-    <option name="width" value="1614" />
+    <option name="x" value="471" />
+    <option name="width" value="1458" />
     <option name="height" value="1392" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -243,6 +266,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -260,16 +284,10 @@
               <item name="bowling_score_board" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="tests" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
-            <path>
-              <item name="bowling_score_board" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bowling_score_board" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -325,17 +343,28 @@
       <workItem from="1524824816735" duration="15626000" />
       <workItem from="1524908145332" duration="7665000" />
       <workItem from="1524999809984" duration="8530000" />
+      <workItem from="1525080899078" duration="15149000" />
+      <workItem from="1525157585843" duration="15666000" />
+      <workItem from="1525242040336" duration="15452000" />
+      <workItem from="1525330109794" duration="21684000" />
+      <workItem from="1525432448585" duration="14024000" />
+      <workItem from="1525507946929" duration="19085000" />
+      <workItem from="1525592284419" duration="18621000" />
+      <workItem from="1525677341031" duration="19480000" />
+      <workItem from="1525765748300" duration="25509000" />
+      <workItem from="1525872462844" duration="7227000" />
+      <workItem from="1525939032078" duration="5870000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="147810000" />
+    <option name="totallyTimeSpent" value="325577000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="105" y="0" width="1076" height="928" extended-state="0" />
+    <frame x="314" y="0" width="972" height="928" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.27495292" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.24384525" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -351,7 +380,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" x="0" y="0" width="380" height="735" id="Documentation" order="3" side_tool="true" weight="0.66002345" />
+      <window_info anchor="right" x="0" y="0" width="166" height="727" id="Documentation" order="4" side_tool="true" weight="0.6588511" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.33040422" />
@@ -365,45 +394,32 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/classes/BowlingScoreSheet.php</url>
+          <line>406</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/classes/BowlingScoreSheet.php</url>
+          <line>50</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/classes/BowlingScoreSheet.php</url>
+          <line>45</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/tests/BowlingScoreSheetTest.php</url>
+          <line>686</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="8" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/classes/Arr.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/BowlingScoreSheet.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2380">
-          <caret line="140" column="30" lean-forward="true" selection-start-line="140" selection-start-column="30" selection-end-line="140" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/TestBase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classes/Arr.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -562,6 +578,7 @@
     <entry file="phar://$PROJECT_DIR$/phpunit.phar/.phar/stub.php" />
     <entry file="file://$PROJECT_DIR$/src/BowlingScoreSheet.php" />
     <entry file="file://$PROJECT_DIR$/src/BowlingScoreSheetTest.php" />
+    <entry file="file://$PROJECT_DIR$/test.php" />
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -569,46 +586,80 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/phpunit.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Arr.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.php" />
-    <entry file="file://$PROJECT_DIR$/tests/ArrTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="11" selection-end-column="3" />
+        <state relative-caret-position="221">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/TestBase.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="53" column="5" lean-forward="true" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+        <state relative-caret-position="1479">
+          <caret line="87" column="24" selection-start-line="87" selection-start-column="24" selection-end-line="87" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/Core/Core_d.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5083">
+          <caret line="299" column="9" selection-start-line="299" selection-start-column="9" selection-end-line="299" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="phar://$PROJECT_DIR$/tests/phpunit.phar/phpunit-mock-objects/Matcher/Invocation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/src/MockObject.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="677">
+          <caret line="57" column="34" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="phar://$PROJECT_DIR$/tests/phpunit.phar/phpunit-mock-objects/Builder/InvocationMocker.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="256" column="20" selection-start-line="256" selection-start-column="20" selection-end-line="256" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Arr.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/ArrTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2448">
+          <caret line="144" column="30" selection-start-line="144" selection-start-column="30" selection-end-line="144" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1190">
+          <caret line="70" column="33" selection-start-line="70" selection-start-column="33" selection-end-line="70" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/BowlingScoreSheet.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="255" column="11" lean-forward="true" selection-start-line="255" selection-start-column="11" selection-end-line="256" selection-end-column="49" />
+        <state relative-caret-position="415">
+          <caret line="103" column="21" lean-forward="true" selection-start-line="103" selection-start-column="21" selection-end-line="103" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/BowlingScoreSheetTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="499" column="45" lean-forward="true" selection-start-line="499" selection-start-column="45" selection-end-line="499" selection-end-column="45" />
+        <state relative-caret-position="1792">
+          <caret line="1946" column="42" selection-start-line="1946" selection-start-column="42" selection-end-line="1946" selection-end-column="42" />
         </state>
       </provider>
     </entry>

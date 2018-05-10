@@ -1,23 +1,15 @@
 <?php
 declare(strict_types=1);
 require('vendor/autoload.php');
-//use BowlingScoreSheet;
-//var_dump($_POST);
 
 if(!empty($_POST)){
-
-//    require_once('BowlingScoreSheet.php');
-//    echo('<pre>');
-//    var_dump($_POST);
-//    echo('</pre>');
-//    exit;
-    $bowling_score_sheet = new BowlingScoreSheet($_POST['result_of_all_attempts']);
-    echo('<pre>');
-    var_dump('ok');
-//    var_dump($bowling_score_sheet->getSumOfFrame(1));
-    echo('</pre>');
-    exit;
-//    $scores = $bowling_score_sheet->calculateScores();
+    $result_of_all_attempts = $_POST['result_of_all_attempts'];
+    $bowling_score_sheet = new BowlingScoreSheet($result_of_all_attempts);
+    $scores_to_display = $bowling_score_sheet->calculateScores();
+    if($bowling_score_sheet->isValidResult() === false && !empty($scores_to_display)){
+        $err_msgs = $scores_to_display;
+        unset($scores_to_display);
+    };
 }
 
 
@@ -44,6 +36,16 @@ if(!empty($_POST)){
         input[type ='submit']{
         }
 
+        div#err_msgs_box p {
+            margin: 0;
+            color: red;
+            font-weight: 600;
+        }
+
+        div#err_msgs_box{
+            margin: 0 0 10px 0;
+        }
+
     </style>
 </head>
 
@@ -51,6 +53,16 @@ if(!empty($_POST)){
 <header><h1>ボーリングのスコア計算</h1></header>
 <article>
     <div id='scoresheet'>
+
+        <div id="err_msgs_box">
+            <?php
+                if(!empty($err_msgs)){
+                    foreach ($err_msgs as $err_msg) {
+                        echo('<p>・'.$err_msg.'</p>');
+                    }
+                }
+            ?>
+        </div>
         <form action='#' method='POST'>
             <table id='scoresheet_table' class='scoresheet' cellpadding='1' cellspacing='0'>
                 <?php
@@ -69,7 +81,10 @@ if(!empty($_POST)){
                             case 1://スコアシートの2行目(投球結果)
                                 $html = '';
                                 for($k = 0; $k <= 2; ++$k){
-                                    $html .= '<td colspan=\'3\'><input name=\'result_of_all_attempts['.$j.']['.$k.']\' type=\'number\' value=\'\'></td>';
+                                    if(empty($result_of_all_attempts[$j][$k]) && $result_of_all_attempts[$j][$k] !== '0' ){
+                                        $result_of_all_attempts[$j][$k] = '';
+                                    }
+                                    $html .= '<td colspan=\'3\'><input name=\'result_of_all_attempts['.$j.']['.$k.']\' type=\'number\' min="0" max="10" step="1" value=\''.htmlspecialchars($result_of_all_attempts[$j][$k], ENT_QUOTES, "UTF-8").'\'></td>';
                                     if ($j <= 8 && $k == 1 ){
                                         break;
                                     }
@@ -81,7 +96,10 @@ if(!empty($_POST)){
                                 if ($j === $num_of_frames - 1){
                                     $colspan = 9;
                                 }
-                                echo('<td colspan=\''.$colspan.'\'><p></p></td>');
+                                if(empty($scores_to_display[$j]) && !is_int($scores_to_display[$j])){
+                                    $scores_to_display[$j] = '';
+                                }
+                                echo('<td colspan=\''.$colspan.'\'><p>'.$scores_to_display[$j].'</p></td>');
                                 break;
                         }
                     }
@@ -91,6 +109,7 @@ if(!empty($_POST)){
 
             </table>
             <input type="submit" value="計算する">
+            <input type="reset" value="リセット" onclick="location.href='http://192.168.33.10';">
         </form>
     </div>
 </article>

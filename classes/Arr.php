@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Shohei Nagamine
- * Date: 2018/04/26
- * Time: 21:08
- */
 
 Class Arr {
 
