@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b937f778-f54f-4628-99b1-b930376be860" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/phpunit.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Arr.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Arr.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/BowlingScoreSheet.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/BowlingScoreSheet.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ArrTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ArrTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/BowlingScoreSheetTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BowlingScoreSheetTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TestBase.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestBase.php" afterDir="false" />
-    </list>
+    <list default="true" id="b937f778-f54f-4628-99b1-b930376be860" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,7 +20,7 @@
             <file leaf-file-name="BowlingScoreSheetTest.php" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/tests/BowlingScoreSheetTest.php">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="1792">
+                  <state relative-caret-position="17806">
                     <caret line="1946" column="42" selection-start-line="1946" selection-start-column="42" selection-end-line="1946" selection-end-column="42" />
                   </state>
                 </provider>
@@ -45,7 +36,7 @@
       <file leaf-file-name="BowlingScoreSheet.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/classes/BowlingScoreSheet.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
+            <state relative-caret-position="-1166">
               <caret line="103" column="21" lean-forward="true" selection-start-line="103" selection-start-column="21" selection-end-line="103" selection-end-column="21" />
             </state>
           </provider>
@@ -353,12 +344,12 @@
       <workItem from="1525677341031" duration="19480000" />
       <workItem from="1525765748300" duration="25509000" />
       <workItem from="1525872462844" duration="7227000" />
-      <workItem from="1525939032078" duration="5870000" />
+      <workItem from="1525939032078" duration="6463000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="325577000" />
+    <option name="totallyTimeSpent" value="326170000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="314" y="0" width="972" height="928" extended-state="0" />
@@ -649,17 +640,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/BowlingScoreSheet.php">
+    <entry file="file://$PROJECT_DIR$/tests/BowlingScoreSheetTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="103" column="21" lean-forward="true" selection-start-line="103" selection-start-column="21" selection-end-line="103" selection-end-column="21" />
+        <state relative-caret-position="17806">
+          <caret line="1946" column="42" selection-start-line="1946" selection-start-column="42" selection-end-line="1946" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/BowlingScoreSheetTest.php">
+    <entry file="file://$PROJECT_DIR$/classes/BowlingScoreSheet.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1792">
-          <caret line="1946" column="42" selection-start-line="1946" selection-start-column="42" selection-end-line="1946" selection-end-column="42" />
+        <state relative-caret-position="-1166">
+          <caret line="103" column="21" lean-forward="true" selection-start-line="103" selection-start-column="21" selection-end-line="103" selection-end-column="21" />
         </state>
       </provider>
     </entry>
