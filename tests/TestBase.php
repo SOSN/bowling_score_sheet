@@ -128,11 +128,7 @@ class TestBase extends TestCase
         }else{
             throw new Exception('$expectedType cannot be handled in ' . __METHOD__ . '.');
         }
-        echo('<pre>');
-        var_dump($e->getMessage());
-        var_dump($expectedPartialMsg);
-        echo('</pre>');
-        exit;
+
         $this->assertSame($e->getMessage(),$expectedPartialMsg);
     }
 
